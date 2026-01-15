@@ -29,21 +29,21 @@ export function HeroSection() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Background Video */}
-      <div className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="metadata"
-          poster="https://res.cloudinary.com/dhtva9xag/video/upload/so_0/13ac717d-b9d4-4c51-a810-ba6deb6296bf_bwamdu.jpg"
-          className="w-full h-full object-cover"
-        >
-          <source
-            src="https://res.cloudinary.com/dhtva9xag/video/upload/q_auto,f_auto,vc_h264,br_1500/13ac717d-b9d4-4c51-a810-ba6deb6296bf_bwamdu.mp4"
-            type="video/mp4"
-          />
-        </video>
+     <video
+  autoPlay
+  loop
+  muted
+  playsInline
+  preload="auto"
+  poster="https://res.cloudinary.com/dhtva9xag/video/upload/so_0/13ac717d-b9d4-4c51-a810-ba6deb6296bf_bwamdu.jpg"
+  className="w-full h-full object-cover"
+>
+  <source
+    src="https://res.cloudinary.com/dhtva9xag/video/upload/fl_progressive,q_auto,f_auto,vc_h264,br_2000/13ac717d-b9d4-4c51-a810-ba6deb6296bf_bwamdu.mp4"
+    type="video/mp4"
+  />
+</video>
+
 
         {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />

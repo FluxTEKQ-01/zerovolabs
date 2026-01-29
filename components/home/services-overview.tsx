@@ -11,7 +11,6 @@ const services = [
     description: "We design AI-powered workflows that automate repetitive tasks like internal operations and reporting, saving hours every week.",
     href: "/services/ai-automation",
     animation: "service-float 6s ease-in-out infinite",
-    bgImage: "/robotic-process-automation-digital-workflow.jpg",
   },
   {
     icon: Globe,
@@ -19,7 +18,6 @@ const services = [
     description: "We build high-conversion websites for growing businesses that establish credibility, attract the right clients.",
     href: "/services/ai-web-development",
     animation: "service-pulse 4s ease-in-out infinite",
-    bgImage: "/futuristic-web-development-neural-network.jpg",
   },
   {
     icon: LayoutDashboard,
@@ -27,7 +25,6 @@ const services = [
     description: "AI systems for scaling operations & solutions designed around your business processes, so you can scale without increasing headcount.",
     href: "/services/saas-development",
     animation: "service-tilt 5.5s ease-in-out infinite",
-    bgImage: "/cloud-saas-platform-dashboard-interface.jpg",
   },
   {
     icon: Sparkles,
@@ -35,7 +32,6 @@ const services = [
     description: "Bespoke artificial intelligence tailored to your unique business challenges and goals.",
     href: "/services/custom-ai",
     animation: "service-drift 8s ease-in-out infinite",
-    bgImage: "/custom-ai-machine-learning-models.jpg",
   },
   {
     icon: Network,
@@ -43,7 +39,6 @@ const services = [
     description: "Coordinate multiple AI systems seamlessly to create unified, intelligent business solutions.",
     href: "/services/ai-orchestration",
     animation: "service-glow 7s ease-in-out infinite",
-    bgImage: "/ai-orchestration-network-nodes-connections.jpg",
   },
 ]
 
@@ -166,7 +161,7 @@ function ServiceCard({
   index: number
   isVisible: boolean
 }) {
-  const { icon: Icon, animation, title, description, href, bgImage } = service
+  const { icon: Icon, animation, title, description, href } = service
   const animationDelay = `${Math.max(index * 0.12, 0)}s`
   const isLarge = index === 0
 
@@ -179,10 +174,6 @@ function ServiceCard({
       style={{ animationDelay }}
     >
       <div className="absolute inset-0 -z-10 overflow-hidden rounded-3xl">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-50 transition-opacity duration-500 group-hover:opacity-60"
-          style={{ backgroundImage: `url(${bgImage})` }}
-        />
         <div className="absolute inset-0 bg-card/80 transition-colors duration-500" />
         <div
           className="absolute inset-0 opacity-30 transition-opacity duration-500 group-hover:opacity-50"

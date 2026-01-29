@@ -81,7 +81,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="animate-on-scroll opacity-0">
               <img
-                src="/modern-tech-office-team-collaboration-dark-futuris.jpg"
+                src="/placeholder.svg"
                 alt="Our team at work"
                 className="rounded-2xl w-full h-auto"
               />

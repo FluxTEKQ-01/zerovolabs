@@ -4,6 +4,7 @@ import { useEffect, useState, useRef, useCallback } from 'react'
 import { getCalApi } from '@calcom/embed-react'
 import { X, AlertCircle } from 'lucide-react'
 import { CalErrorBoundary } from '@/components/cal-error-boundary'
+import { CalPreloadSpinner } from '@/components/cal-preload-spinner'
 import { startCalLoadTimer, endCalLoadTimer, recordCalError, startIframeTimer, endIframeTimer } from '@/lib/cal-performance'
 
 interface CalModalOptimizedProps {
@@ -154,14 +155,8 @@ export function CalModalOptimized({
             <X className="w-5 h-5" />
           </button>
 
-          {/* Loading State */}
-          {isLoading && (
-            <div className="absolute inset-0 flex items-center justify-center bg-background/90 z-20 flex-col gap-3">
-              <div className="w-10 h-10 border-4 border-primary border-t-transparent rounded-full animate-spin" />
-              <p className="text-sm text-muted-foreground">Loading calendar...</p>
-              <p className="text-xs text-muted-foreground/50">This usually takes 1-2 seconds</p>
-            </div>
-          )}
+          {/* Loading State - Custom Spinner */}
+          <CalPreloadSpinner isVisible={isLoading} />
 
           {/* Error State */}
           {hasError && !isLoading && (

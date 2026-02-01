@@ -6,6 +6,7 @@ import { ScrollToTop } from "@/components/scroll-to-top"
 import { LoaderProvider } from "@/components/loader-provider"
 import Script from "next/script"
 import "./globals.css"
+import "@/components/loader.css"
 
 const _outfit = Outfit({
   subsets: ["latin"],

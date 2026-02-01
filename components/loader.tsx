@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useEffect, useRef, useState } from 'react'
-import './loader.css'
 
 const Loader: React.FC = () => {
   const [isHiding, setIsHiding] = useState(false)

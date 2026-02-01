@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap');
+
+:root {
+  --curious-blue: #2899c6;
+  --aztec: #050a0c;
+  --gulf-stream: #77abab;
+  --casal: #2a5b6e;
+  --blue-dianne: #1b3843;
+  --white: #ffffff;
+  --glow: rgba(40, 153, 198, 0.4);
+}
+
+#loader-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background-color: var(--aztec);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), filter 1.2s cubic-bezier(0.4, 0, 0.2, 1), transform 1.2s cubic-bezier(0.8, 0, 0.2, 1);
+}
+
+body.loaded #loader-wrapper {
+  opacity: 0;
+  transform: scale(1.1);
+  filter: blur(20px);
+  pointer-events: none;
+}
+
+.brand-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transform: scale(0.96) translateY(10px);
+  animation: reveal 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.2s;
+}
+
+@keyframes reveal {
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+#loader-wrapper svg {
+  width: clamp(280px, 80vw, 1000px);
+  height: auto;
+  overflow: visible;
+  filter: drop-shadow(0 0 20px rgba(0,0,0,0.5));
+}
+
+.text-base {
+  fill: var(--blue-dianne);
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  font-size: 130px;
+  letter-spacing: -0.04em;
+  opacity: 0.3;
+}
+
+.text-liquid {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  font-size: 130px;
+  letter-spacing: -0.04em;
+  filter: url(#glowFilter);
+}
+
+.loader-meta {
+  position: absolute;
+  bottom: -60px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: ui-monospace, 'Cascadia Code', monospace;
+  font-size: 10px;
+  color: var(--casal);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  padding: 0 5px;
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-grow: 1;
+}
+
+.mini-track {
+  flex-grow: 1;
+  height: 1px;
+  background-color: var(--blue-dianne);
+  position: relative;
+  overflow: hidden;
+}
+
+.mini-bar {
+  height: 100%;
+  background-color: var(--curious-blue);
+  width: 0;
+  transition: width 0.1s linear;
+  box-shadow: 0 0 5px var(--glow);
+}
+
+.percent-box,
+.status-box {
+  flex-shrink: 0;
+  width: 120px;
+}
+
+.percent-box {
+  text-align: right;
+}
+
+.bottom-pill {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background-color: var(--blue-dianne);
+  border-radius: 2px;
+  opacity: 0;
+  animation: pill-reveal 0.8s ease-out forwards 1s;
+}
+
+@keyframes pill-reveal {
+  to {
+    opacity: 0.5;
+  }
+}

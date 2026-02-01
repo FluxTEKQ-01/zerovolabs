@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import './loader.css'
 
 const Loader: React.FC = () => {
-  const [shouldShowLoader, setShouldShowLoader] = useState(true)
+  const [isHiding, setIsHiding] = useState(false)
   
   // Refs for direct DOM manipulation
   const wavePathRef = useRef<SVGPathElement>(null)
@@ -16,9 +16,6 @@ const Loader: React.FC = () => {
   useEffect(() => {
     // Ensure body starts without the 'loaded' class on mount to show loader
     document.body.classList.remove('loaded')
-    
-    if (!shouldShowLoader) return
-
     let currentProgress = 0
     let targetProgress = 0
     let time = 0
@@ -98,7 +95,7 @@ const Loader: React.FC = () => {
     const finish = () => {
       document.body.classList.add('loaded')
       setTimeout(() => {
-        setShouldShowLoader(false)
+        setIsHiding(true)
       }, 1000) // Keep component mounted long enough for CSS transition to complete
     }
 
@@ -109,9 +106,9 @@ const Loader: React.FC = () => {
     return () => {
       if (animationFrameId) cancelAnimationFrame(animationFrameId)
     }
-  }, [shouldShowLoader])
+  }, [])
 
-  if (!shouldShowLoader) {
+  if (isHiding) {
     return null
   }
 

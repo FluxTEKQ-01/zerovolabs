@@ -25,7 +25,7 @@ export function CalModalOptimized({
   namespace = '30min'
 }: CalModalOptimizedProps) {
   const [isLoaded, setIsLoaded] = useState(false)
-  const [isLoading, setIsLoading] = useState(isOpen)
+  const [isLoading, setIsLoading] = useState(true) // Always start with loader visible
   const [hasError, setHasError] = useState(false)
   const [preloadStarted, setPreloadStarted] = useState(false)
   const iframeRef = useRef<HTMLIFrameElement>(null)
@@ -75,8 +75,15 @@ export function CalModalOptimized({
 
   // Preload strategy: immediate + delayed fallback
   useEffect(() => {
-    if (!isOpen) return
+    if (!isOpen) {
+      // Reset loading state when modal closes
+      setIsLoading(true)
+      return
+    }
 
+    // Ensure loader is visible immediately when modal opens
+    setIsLoading(true)
+    
     // Strategy 1: Preload immediately if modal is open
     preloadCalApi()
 

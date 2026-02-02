@@ -24,6 +24,23 @@ const projects = [
     link: "https://vagrah-builders-premiere.vercel.app/",
   },
   {
+    id: 2,
+    title: "Athern Labs Agency Portal",
+    category: "Web Development",
+    client: "Athern Labs",
+    year: "2025",
+    image: "/athern-labs-agency-website-dark-modern.jpg",
+    description:
+      "This website is made for an Agency client name Athern Labs. A sophisticated digital agency website showcasing innovative web solutions, cutting-edge technology services, and premium digital transformation capabilities. The platform features a luxury dark theme with elegant animations and a modern interface designed to attract high-value enterprise clients.",
+    results: [
+      "Modern agency branding established",
+      "50% increase in qualified leads",
+      "Enhanced digital presence and credibility",
+      "Premium client acquisition improved significantly",
+    ],
+    link: "#",
+  },
+  {
     id: 3,
     title: "AI-Powered Student Career & Study Platform",
     category: "Custom AI ",

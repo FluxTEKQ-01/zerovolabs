@@ -12,7 +12,7 @@ const projects = [
     title: "Vagrah Builders Premiere",
     category: "Web Development",
     client: "Vagrah Builders",
-    year: "2025",
+    year: "2024",
     image: "/luxury-modern-villa-with-pool-at-night-premium-rea.jpg",
     description:
       "A premium real estate website for Vagrah Builders specializing in luxury villas, apartments, and commercial complexes. The site features stunning visuals, smooth animations, and an elegant dark theme that perfectly showcases their high-end properties.",
@@ -23,6 +23,35 @@ const projects = [
     ],
     link: "https://vagrah-builders-premiere.vercel.app/",
   },
+{
+    id: 2,
+    title: "Athern Labs Agency ",
+    category: "Web Development",
+    client: "Athern Labs",
+    year: "2025",
+    image: "/athern-labs-agency-website-dark-modern.jpg",
+    description:
+      "This website is made for an Agency client name Athern Labs. A sophisticated digital agency website showcasing innovative web solutions, cutting-edge technology services, and premium digital transformation capabilities. The platform features a luxury dark theme with elegant animations and a modern interface designed to attract high-value enterprise clients.",
+    results: [
+      "Modern agency branding established",
+      "50% increase in qualified leads",
+      "Enhanced digital presence and credibility",
+      "Premium client acquisition improved significantly",
+    ],
+    link: "https://athernlabs.vercel.app/",
+
+
+
+
+
+
+
+
+
+
+
+
+  
   {
     id: 3,
     title: "AI-Powered Student Career & Study Platform",

@@ -74,10 +74,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-                  <div>
-                    <h3 className="font-light text-foreground mb-1">Email</h3>
-                    <p className="text-muted-foreground text-sm">contact@zerovolabs.in</p>
-                  </div>
+          
 
       {/* Contact Form & Info */}
       <section className="py-20">
@@ -91,10 +88,15 @@ export default function ContactPage() {
                   Whether you have a project in mind or just want to explore possibilities, our team is here to help.
                 </p>
               </div>
+              <div>
+                    <h3 className="font-light text-foreground mb-1">Email</h3>
+                    <p className="text-muted-foreground text-sm">contact@zerovolabs.in</p>
+                  </div>
 
               <div className="animate-on-scroll opacity-0 space-y-6" style={{ animationDelay: "0.1s" }}>
 
               </div>
+              
             </div>
 
             {/* Contact Form */}

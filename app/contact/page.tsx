@@ -93,7 +93,35 @@ export default function ContactPage() {
               </div>
 
               <div className="animate-on-scroll opacity-0 space-y-6" style={{ animationDelay: "0.1s" }}>
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
+                    <Mail className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-light text-foreground mb-1">Email</h3>
+                    <p className="text-muted-foreground text-sm">contact@zerovo.com</p>
+                  </div>
+                </div>
 
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
+                    <Phone className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-light text-foreground mb-1">Phone</h3>
+                    <p className="text-muted-foreground text-sm">+1 (555) 123-4567</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
+                    <MapPin className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-light text-foreground mb-1">Location</h3>
+                    <p className="text-muted-foreground text-sm">Remote - Available Worldwide</p>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -167,22 +195,41 @@ export default function ContactPage() {
                       />
                     </div>
 
-                    <div>
-                      <label htmlFor="service" className="block text-sm font-light mb-2">
-                        Service Interested In
-                      </label>
-                      <select
-                        id="service"
-                        name="service"
-                        className="w-full px-4 py-3 rounded-xl bg-input border border-border focus:border-primary focus:outline-none transition-colors text-foreground"
-                      >
-                        <option value="">Select a service</option>
-                        <option value="AI-Powered Web Development">AI-Powered Web Development</option>
-                        <option value="AI Automation Systems">AI Automation Systems</option>
-                        <option value="Custom AI Solutions">Custom AI Solutions</option>
-                        <option value="SaaS Product Development">SaaS Product Development</option>
-                        <option value="General Consulting">General Consulting</option>
-                      </select>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label htmlFor="service" className="block text-sm font-light mb-2">
+                          Service Interested In
+                        </label>
+                        <select
+                          id="service"
+                          name="service"
+                          className="w-full px-4 py-3 rounded-xl bg-input border border-border focus:border-primary focus:outline-none transition-colors text-foreground"
+                        >
+                          <option value="">Select a service</option>
+                          <option value="AI-Powered Web Development">AI-Powered Web Development</option>
+                          <option value="AI Automation Systems">AI Automation Systems</option>
+                          <option value="Custom AI Solutions">Custom AI Solutions</option>
+                          <option value="SaaS Product Development">SaaS Product Development</option>
+                          <option value="General Consulting">General Consulting</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label htmlFor="timing" className="block text-sm font-light mb-2">
+                          Preferred Timing
+                        </label>
+                        <select
+                          id="timing"
+                          name="timing"
+                          className="w-full px-4 py-3 rounded-xl bg-input border border-border focus:border-primary focus:outline-none transition-colors text-foreground"
+                        >
+                          <option value="">Select timing</option>
+                          <option value="ASAP">ASAP</option>
+                          <option value="This Week">This Week</option>
+                          <option value="Next Week">Next Week</option>
+                          <option value="This Month">This Month</option>
+                          <option value="Flexible">Flexible</option>
+                        </select>
+                      </div>
                     </div>
 
                     <div>

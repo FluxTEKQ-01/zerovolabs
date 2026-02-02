@@ -3,8 +3,10 @@ import type { Metadata } from "next"
 import { Outfit } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { ScrollToTop } from "@/components/scroll-to-top"
+import { LoaderProvider } from "@/components/loader-provider"
 import Script from "next/script"
 import "./globals.css"
+import "@/components/loader.css"
 
 const _outfit = Outfit({
   subsets: ["latin"],
@@ -48,8 +50,10 @@ export default function RootLayout({
       </head>
 
       <body className="font-sans antialiased">
-        <ScrollToTop />
-        {children}
+        <LoaderProvider>
+          <ScrollToTop />
+          {children}
+        </LoaderProvider>
         <Analytics />
       </body>
     </html>

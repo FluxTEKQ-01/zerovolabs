@@ -74,6 +74,11 @@ export default function ContactPage() {
         </div>
       </section>
 
+                  <div>
+                    <h3 className="font-light text-foreground mb-1">Email</h3>
+                    <p className="text-muted-foreground text-sm">contact@zerovolabs.in</p>
+                  </div>
+
       {/* Contact Form & Info */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6">

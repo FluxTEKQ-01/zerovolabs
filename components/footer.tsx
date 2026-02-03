@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Twitter, Linkedin, Github, Instagram } from "lucide-react"
+import { Twitter, Linkedin, Instagram } from "lucide-react"
 import { Logo } from "./logo"
 
 const footerLinks = {
@@ -20,9 +20,8 @@ const footerLinks = {
   ],
   social: [
     { href: "#", icon: Twitter, label: "Twitter" },
-    { href: "#", icon: Linkedin, label: "LinkedIn" },
-    { href: "#", icon: Github, label: "GitHub" },
-    { href: "#", icon: Instagram, label: "Instagram" },
+    { href: "https://www.linkedin.com/company/zerovolabs/about/", icon: Linkedin, label: "LinkedIn" },
+    { href: "https://www.instagram.com/zerovo_labs?igsh=MWhhemVlamI4N2pvaw==", icon: Instagram, label: "Instagram" },
   ],
 }
 

@@ -60,8 +60,7 @@ export default function RootLayout({
             "description": "Premium AI-Powered Digital Solutions specializing in web development, automation, and custom AI.",
             "sameAs": [
               "https://twitter.com/zerovolabs",
-              "https://linkedin.com/company/zerovolabs",
-              "https://github.com/zerovolabs"
+              "https://linkedin.com/company/zerovolabs"
             ]
           }}
         />

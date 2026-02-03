@@ -21,7 +21,7 @@ interface AutoScrollCarouselProps {
 
 export function AutoScrollCarousel({ items, className }: AutoScrollCarouselProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, dragFree: true }, [
-    AutoScroll({ playOnInit: true, speed: 1 }),
+    AutoScroll({ playOnInit: true, speed: 1 }) as any,
   ])
 
   const [isHovered, setIsHovered] = useState(false)
@@ -30,9 +30,9 @@ export function AutoScrollCarousel({ items, className }: AutoScrollCarouselProps
     if (!emblaApi) return
 
     if (isHovered) {
-      emblaApi.plugins().autoScroll?.stop()
+      ; (emblaApi.plugins() as any).autoScroll?.stop()
     } else {
-      emblaApi.plugins().autoScroll?.play()
+      ; (emblaApi.plugins() as any).autoScroll?.play()
     }
   }, [emblaApi, isHovered])
 

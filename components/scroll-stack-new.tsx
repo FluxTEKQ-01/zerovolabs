@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react"
 export interface ScrollStackCard {
   title: string
   subtitle?: string
-  badge?: string
+  badge?: React.ReactNode
   backgroundImage?: string
   content?: React.ReactNode
 }
@@ -16,6 +16,7 @@ interface ScrollStackProps {
   backgroundColor?: string
   cardHeight?: string
   sectionHeightMultiplier?: number
+  intersectionThreshold?: number
   className?: string
 }
 

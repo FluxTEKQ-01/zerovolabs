@@ -127,8 +127,8 @@ export default function AboutPage() {
               {[
                 { value: "50+", label: "Projects Delivered" },
                 { value: "98%", label: "Client Satisfaction" },
-                { value: "15+", label: "Team Members" },
-                { value: "4", label: "Years of Excellence" },
+                { value: "10+", label: "Team Members" },
+                { value: "2", label: "Years of Excellence" },
               ].map((stat, index) => (
                 <div key={stat.label}>
                   <p className="text-4xl md:text-5xl font-light text-primary">{stat.value}</p>

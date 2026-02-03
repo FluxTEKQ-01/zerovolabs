@@ -2,8 +2,10 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Outfit } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { ScrollToTop } from "@/components/scroll-to-top"
 import Script from "next/script"
+import { JsonLd } from "@/components/json-ld"
 import "./globals.css"
 
 const _outfit = Outfit({
@@ -25,6 +27,9 @@ export const metadata: Metadata = {
       },
     ],
   },
+  verification: {
+    google: "YOUR_GOOGLE_VERIFICATION_CODE",
+  },
 }
 
 export default function RootLayout({
@@ -45,13 +50,58 @@ export default function RootLayout({
           })(window, document, "clarity", "script", "v0vp9ezv96");
           `}
         </Script>
+        <JsonLd
+          data={{
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Zerovo Labs",
+            "url": "https://zerovolabs.in",
+            "logo": "https://zerovolabs.in/favicon.svg",
+            "description": "Premium AI-Powered Digital Solutions specializing in web development, automation, and custom AI.",
+            "sameAs": [
+              "https://twitter.com/zerovolabs",
+              "https://linkedin.com/company/zerovolabs",
+              "https://github.com/zerovolabs"
+            ]
+          }}
+        />
+        <JsonLd
+          data={{
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Zerovo Labs",
+            "image": "https://zerovolabs.in/favicon.svg",
+            "@id": "https://zerovolabs.in",
+            "url": "https://zerovolabs.in",
+            "telephone": "",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Remote / Online",
+              "addressLocality": "Digital State",
+              "addressCountry": "IN"
+            },
+            "openingHoursSpecification": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+              ],
+              "opens": "09:00",
+              "closes": "18:00"
+            }
+          }}
+        />
       </head>
 
       <body className="font-sans antialiased">
         <ScrollToTop />
         {children}
         <Analytics />
+        <SpeedInsights />
       </body>
-    </html>
+    </html >
   )
 }

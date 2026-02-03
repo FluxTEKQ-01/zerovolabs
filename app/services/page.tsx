@@ -8,6 +8,7 @@ import ScrollStack, { type ScrollStackCard } from "@/components/scroll-stack-new
 import { AutoScrollCarousel } from "@/components/auto-scroll-carousel"
 import { StardustButton } from "@/components/stardust-button"
 import { CalModal } from "@/components/cal-modal"
+import { JsonLd } from "@/components/json-ld"
 import {
   Globe,
   Sparkles,
@@ -338,6 +339,20 @@ export default function ServicesPage() {
         <Footer />
       </main>
 
+      <JsonLd
+        data={services.map((service) => ({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": service.title,
+          "description": service.description,
+          "provider": {
+            "@type": "Organization",
+            "name": "Zerovo Labs",
+            "url": "https://zerovolabs.in"
+          },
+          "url": `https://zerovolabs.in${service.slug}`
+        }))}
+      />
       <CalModal isOpen={isCalModalOpen} onClose={() => setIsCalModalOpen(false)} />
     </>
   )

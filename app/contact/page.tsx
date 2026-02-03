@@ -6,6 +6,8 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Mail, MapPin, Phone, Send, CheckCircle, AlertCircle } from "lucide-react"
 import { sendContactEmail } from "@/app/actions/send-email"
+import { FAQSection } from "@/components/home/faq-section"
+import { JsonLd } from "@/components/json-ld"
 
 export default function ContactPage() {
   const [isSubmitted, setIsSubmitted] = useState(false)
@@ -43,7 +45,7 @@ export default function ContactPage() {
 
     if (result.success) {
       setIsSubmitted(true)
-      ;(e.target as HTMLFormElement).reset()
+        ; (e.target as HTMLFormElement).reset()
     } else {
       setError(result.error || "Failed to send message. Please try again.")
     }
@@ -74,7 +76,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-          
+
 
       {/* Contact Form & Info */}
       <section className="py-20">
@@ -89,14 +91,14 @@ export default function ContactPage() {
                 </p>
               </div>
               <div>
-                    <h3 className="font-light text-foreground mb-1">Email</h3>
-                    <p className="text-muted-foreground text-sm">contact@zerovolabs.in</p>
-                  </div>
+                <h3 className="font-light text-foreground mb-1">Email</h3>
+                <p className="text-muted-foreground text-sm">contact@zerovolabs.in</p>
+              </div>
 
               <div className="animate-on-scroll opacity-0 space-y-6" style={{ animationDelay: "0.1s" }}>
 
               </div>
-              
+
             </div>
 
             {/* Contact Form */}
@@ -225,6 +227,39 @@ export default function ContactPage() {
         </div>
       </section>
 
+      <FAQSection />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What are your pricing models?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We offer flexible pricing based on project scope—fixed-price for defined projects, retainer models for ongoing partnerships, and milestone-based payments for larger initiatives."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How long does a typical project take?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Timelines vary based on complexity. A simple AI integration might take 2-4 weeks, while a full SaaS platform could take 3-6 months."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can you integrate AI into our existing systems?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely. We specialize in seamlessly integrating AI capabilities into existing infrastructure, whether it's adding intelligent automation to your CRM or enhancing your e-commerce platform."
+              }
+            }
+          ]
+        }}
+      />
       <Footer />
     </main>
   )
